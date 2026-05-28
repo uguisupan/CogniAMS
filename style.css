@@ -32,18 +32,19 @@ body {
     font-family: var(--font-sans);
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
+    flex-direction: column;      /* ヘッダーを上部にするため縦並びに */
+    justify-content: flex-start;  /* 上から配置 */
+    align-items: center;          /* 左右は中央揃え */
+    padding: 80px 20px 40px 20px; /* 上部に大きめの余白を確保 */
     overflow-x: hidden;
 }
 
 .portal-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 60px; /* ヘッダーとカードグリッドの間隔を広げてゆとりを持たせる */
 }
 
 .portal-header {
@@ -72,12 +73,12 @@ body {
 /* ポータルのグリッドレイアウト */
 .portal-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* カード同士の間隔を広げる */
 }
 
-/* ポータルカードの共通スタイル */
-.portal-card {
+/* ポータルカードの共通スタイル (visited時の紫色変化を完全に防止) */
+.portal-card, .portal-card:visited {
     position: relative;
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -88,7 +89,7 @@ body {
     justify-content: space-between;
     min-height: 260px;
     text-decoration: none;
-    color: inherit;
+    color: var(--text-primary) !important; /* 文字色がブラウザデフォルトのリンク色（紫）になるのを防止 */
     overflow: hidden;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -114,6 +115,7 @@ body {
     font-size: 1.6rem;
     font-weight: 700;
     margin-bottom: 15px;
+    color: #fff;
     transition: color var(--transition-speed);
 }
 
@@ -137,10 +139,6 @@ body {
     cursor: pointer;
 }
 
-.active-card .card-title {
-    color: #fff;
-}
-
 .active-card .card-status {
     color: var(--color-primary);
     text-shadow: 0 0 10px var(--color-primary-glow);
@@ -159,10 +157,10 @@ body {
 
 /* ロックされたカード（Coming Soon）のスタイル */
 .locked-card {
-    opacity: 0.5;
+    opacity: 0.4;
     border-color: rgba(255, 255, 255, 0.02);
     background: rgba(10, 12, 18, 0.4);
-    pointer-events: none; /* クリック不可 */
+    pointer-events: none;
 }
 
 .locked-card .card-title {
