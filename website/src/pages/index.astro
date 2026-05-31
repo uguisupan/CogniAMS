@@ -21,7 +21,7 @@ const formatDate = (date: Date) => {
 };
 ---
 
-<Layout title="開発ブログ ＆ 資料インデックス">
+<Layout title="開発ブログ ＆ 資料インデックス" theme="dark" hideNav={true}>
     <!-- 公式サイトへの誘導バナー -->
     <div style="background: rgba(214, 0, 98, 0.05); border: 2px solid var(--color-pink); padding: 20px; text-align: center; margin-bottom: 30px; box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);">
         <h3 class="font-sans" style="color: var(--color-pink); font-weight: bold; font-size: 1.1rem; margin-bottom: 8px;">
@@ -54,13 +54,11 @@ const formatDate = (date: Date) => {
                     ))}
                     {sortedDevlogs.length === 0 && <p style="color: var(--text-muted); font-size: 0.8rem; padding: 10px;">記事がありません。</p>}
                 </div>
-                {sortedDevlogs.length > 3 && (
-                    <div style="display: flex; justify-content: flex-end;">
-                        <a href={`${import.meta.env.BASE_URL}/devlog/`} class="product-action-btn font-mono" style="text-decoration: none; padding: 4px 12px;">
-                            VIEW ALL DEVLOGS ➔
-                        </a>
-                    </div>
-                )}
+                <div style="display: flex; justify-content: flex-end;">
+                    <a href={`${import.meta.env.BASE_URL}/devlog/`} class="product-action-btn font-mono" style="text-decoration: none; padding: 4px 12px;">
+                        VIEW ALL DEVLOGS ➔
+                    </a>
+                </div>
             </section>
 
             <!-- 参戦記 -->
@@ -78,13 +76,11 @@ const formatDate = (date: Date) => {
                     ))}
                     {sortedRaces.length === 0 && <p style="color: var(--text-muted); font-size: 0.8rem; padding: 10px;">参戦記録がありません。</p>}
                 </div>
-                {sortedRaces.length > 3 && (
-                    <div style="display: flex; justify-content: flex-end;">
-                        <a href={`${import.meta.env.BASE_URL}/race/`} class="product-action-btn font-mono" style="text-decoration: none; padding: 4px 12px;">
-                            VIEW ALL RACE LOGS ➔
-                        </a>
-                    </div>
-                )}
+                <div style="display: flex; justify-content: flex-end;">
+                    <a href={`${import.meta.env.BASE_URL}/race/`} class="product-action-btn font-mono" style="text-decoration: none; padding: 4px 12px;">
+                        VIEW ALL RACE LOGS ➔
+                    </a>
+                </div>
             </section>
         </div>
 
@@ -135,13 +131,11 @@ const formatDate = (date: Date) => {
                     ))}
                     {sortedBooks.length === 0 && <p style="color: var(--text-muted); font-size: 0.8rem; padding: 10px;">本が登録されていません。</p>}
                 </div>
-                {sortedBooks.length > 3 && (
-                    <div style="display: flex; justify-content: flex-end;">
-                        <a href={`${import.meta.env.BASE_URL}/books/`} class="product-action-btn font-mono" style="text-decoration: none; padding: 4px 12px;">
-                            VIEW ALL BOOKS ➔
-                        </a>
-                    </div>
-                )}
+                <div style="display: flex; justify-content: flex-end;">
+                    <a href={`${import.meta.env.BASE_URL}/books/`} class="product-action-btn font-mono" style="text-decoration: none; padding: 4px 12px;">
+                        VIEW ALL BOOKS ➔
+                    </a>
+                </div>
             </section>
         </div>
     </div>

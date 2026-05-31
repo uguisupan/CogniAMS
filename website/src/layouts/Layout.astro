@@ -5,9 +5,11 @@ interface Props {
     title: string;
     description?: string;
     activeNav?: string;
+    theme?: 'light' | 'dark';
+    hideNav?: boolean;
 }
 
-const { title, description = "コグニエイムズ(CogniAIMZ)は、人間の足裏の圧力知覚とブレーキングの再現性向上を目指す同人サークルです。", activeNav = "" } = Astro.props;
+const { title, description = "コグニエイムズ(CogniAIMZ)は、人間の足裏の圧力知覚とブレーキングの再現性向上を目指す同人サークルです。", activeNav = "", theme = 'light', hideNav = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,7 +20,7 @@ const { title, description = "コグニエイムズ(CogniAIMZ)は、人間の足
     <title>{title} - CogniAIMZ</title>
     <meta name="description" content={description}>
 </head>
-<body>
+<body class={`theme-${theme}`}>
     <div class="site-container">
         <!-- ヘッダー -->
         <header class="site-header" id="header">
@@ -26,12 +28,14 @@ const { title, description = "コグニエイムズ(CogniAIMZ)は、人間の足
                 <a href={`${import.meta.env.BASE_URL}/`} class="logo-main"><span>Cogni</span>AIMZ</a>
                 <div class="logo-ruby">こぐにえいむず // kɔg-ni-eɪmz</div>
             </div>
-            <nav class="nav-links">
-                <a href={`${import.meta.env.BASE_URL}/#about`} class={`nav-link ${activeNav === 'about' ? 'active' : ''}`}>About</a>
-                <a href={`${import.meta.env.BASE_URL}/#products`} class={`nav-link ${activeNav === 'products' ? 'active' : ''}`}>Products</a>
-                <a href={`${import.meta.env.BASE_URL}/#devlog`} class={`nav-link ${activeNav === 'devlog' ? 'active' : ''}`}>Devlog</a>
-                <a href={`${import.meta.env.BASE_URL}/#event`} class={`nav-link ${activeNav === 'event' ? 'active' : ''}`}>Event</a>
-            </nav>
+            {!hideNav && (
+                <nav class="nav-links">
+                    <a href={`${import.meta.env.BASE_URL}/#about`} class={`nav-link ${activeNav === 'about' ? 'active' : ''}`}>About</a>
+                    <a href={`${import.meta.env.BASE_URL}/#products`} class={`nav-link ${activeNav === 'products' ? 'active' : ''}`}>Products</a>
+                    <a href={`${import.meta.env.BASE_URL}/#devlog`} class={`nav-link ${activeNav === 'devlog' ? 'active' : ''}`}>Devlog</a>
+                    <a href={`${import.meta.env.BASE_URL}/#event`} class={`nav-link ${activeNav === 'event' ? 'active' : ''}`}>Event</a>
+                </nav>
+            )}
         </header>
 
         <!-- メインコンテンツの挿入 -->
