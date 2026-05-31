@@ -19,8 +19,8 @@
             <nav class="nav-links">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#products" class="nav-link">Products</a>
-                <a href="https://uguisupan.github.io/CogniAMS/#devlog" class="nav-link">Devlog</a>
-                <a href="https://uguisupan.github.io/CogniAMS/#event" class="nav-link">Event</a>
+                <a href="https://uguisupan.github.io/CogniAIMZ/#devlog" class="nav-link">Devlog</a>
+                <a href="https://uguisupan.github.io/CogniAIMZ/#event" class="nav-link">Event</a>
             </nav>
         </header>
 
@@ -96,7 +96,7 @@
             <h2 class="section-title-cyber">Project Products</h2>
             <div class="products-grid">
                 <!-- K2MF-001: Brake Trainer -->
-                <a href="https://uguisupan.github.io/CogniAMS/brake-trainer-K2MF-001/index.html" target="_blank" rel="noopener noreferrer" class="product-card active" id="product-k2mf-001">
+                <a href="https://uguisupan.github.io/CogniAIMZ/brake-trainer-K2MF-001/index.html" target="_blank" rel="noopener noreferrer" class="product-card active" id="product-k2mf-001">
                     <div class="product-content">
                         <div class="product-meta">SYSTEM MODEL: K2MF-001 | v0.1.0alpha 2026/05/29</div>
                         <h3 class="product-title">Brake Trainer</h3>
@@ -217,8 +217,8 @@
     <!-- 非同期で GitHub Pages から最新記事を取得するスクリプト -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const feedUrl = 'https://uguisupan.github.io/CogniAMS/feed.json';
-            const baseUri = 'https://uguisupan.github.io/CogniAMS';
+            const feedUrl = 'https://uguisupan.github.io/CogniAIMZ/feed.json';
+            const baseUri = 'https://uguisupan.github.io/CogniAIMZ';
 
             fetch(feedUrl)
                 .then(response => {
@@ -284,7 +284,7 @@
                 })
                 .catch(err => {
                     console.error('Error fetching feed:', err);
-                    const errorHtml = '<p class="font-sans" style="color: var(--color-pink); font-size: 0.8rem; padding: 10px;">データの取得に失敗しました。最新情報は直接 <a href="https://uguisupan.github.io/CogniAMS/" target="_blank" rel="noopener noreferrer" style="color: var(--color-cyan); text-decoration: underline;">GitHub Pages</a> をご確認ください。</p>';
+                    const errorHtml = '<p class="font-sans" style="color: var(--color-pink); font-size: 0.8rem; padding: 10px;">データの取得に失敗しました。最新情報は直接 <a href="https://uguisupan.github.io/CogniAIMZ/" target="_blank" rel="noopener noreferrer" style="color: var(--color-cyan); text-decoration: underline;">GitHub Pages</a> をご確認ください。</p>';
                     ['devlog-list', 'race-list', 'books-list'].forEach(id => {
                         const el = document.getElementById(id);
                         if (el) el.innerHTML = errorHtml;
