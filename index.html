@@ -4,30 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>サークル公式サイト - CogniAIMZ</title>
-    <meta name="description" content="コグニエイムズ(CogniAIMZ)は、人間の足裏 of 圧力知覚とブレーキングの再現性向上を目指す同人サークルです。">
+    <meta name="description" content="コグニエイムズ(CogniAIMZ)は、人間の足裏の圧力知覚とブレーキングの再現性向上を目指す同人サークルです。">
     <!-- ローカルに移植したスタイルシートを読み込む -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="site-container">
-        <!-- ヘッダー (ナビゲーションリンクを新しい構成に合わせて調整) -->
+        <!-- ヘッダー (新しい順序 About -> Products -> Logs -> Mission に合わせて調整) -->
         <header class="site-header" id="header">
             <div class="logo-area">
                 <a href="./index.html" class="logo-main"><span>Cogni</span>AIMZ</a>
                 <div class="logo-ruby">こぐにえいむず // kɔg-ni-eɪmz</div>
             </div>
             <nav class="nav-links">
+                <a href="#about" class="nav-link">About</a>
                 <a href="#products" class="nav-link">Products</a>
                 <a href="#logs" class="nav-link">Logs</a>
                 <a href="#mission" class="nav-link">Mission</a>
-                <a href="#about" class="nav-link">About</a>
             </nav>
         </header>
 
         <!-- メインコンテンツ -->
 
-        <!-- ① Main Products (最上部に移動) -->
-        <section class="products-section" id="products">
+        <!-- ① About (サークル紹介：先頭へ移動し、極限までコンパクト化) -->
+        <section class="about-section" id="about">
+            <div class="maid-avatar-area">
+                <div class="maid-stand-placeholder">
+                    <img src="./maid_mai.jpg" alt="マイ">
+                </div>
+                <div class="maid-name font-mono">小国マイ</div>
+            </div>
+            <div class="about-dialog-box">
+                <div class="dialog-header font-mono">COGNITIVE_SYSTEM_EXPLANATION.txt</div>
+                <div class="dialog-text">
+                    <p>
+                        「ようこそ！解説のマイだよ！多くのドライバーは、荷重移動の要であるブレーキングの『リリース（抜く）』操作で、脳内イメージと実際の踏力に大きな<span class="pink-highlight">『認知のズレ』</span>を抱えているんだ。」
+                    </p>
+                    <p>
+                        「当サークルでは、ペダル挙動をミリ秒単位で捉え、足裏の感覚を研ぎ澄ますトレーニングツールを開発しているよ。一緒に『狙った通りの1ミリ秒』を追求しよう！」
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ② Main Products (ツール紹介) -->
+        <section class="products-section" id="products" style="margin-top: 10px;">
             <h2 class="section-title-cyber">Main Products</h2>
             <div class="products-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto 15px auto; width: 100%;">
                 <!-- K2MF-001: Brake Trainer -->
@@ -55,7 +76,7 @@
             </div>
         </section>
 
-        <!-- ② Logs (3カラム並列：Devlog, Race, Books) -->
+        <!-- ③ Logs (3カラム並列：Devlog, Race, Books) -->
         <section id="logs" style="margin-top: 20px;">
             <div class="logs-columns">
                 <!-- 開発ログ (Devlog) -->
@@ -115,8 +136,8 @@
             <span class="counter-note">※カウンター限界突破につき機能停止中（ウソ）</span>
         </div>
 
-        <!-- ③ Next Mission (書籍準備中 ＆ イベント出展の統合) -->
-        <section class="hero-section" id="mission">
+        <!-- ④ Next Mission (書籍準備中 ＆ イベント出展の統合) -->
+        <section class="hero-section" id="mission" style="margin-top: 20px;">
             <!-- 左側: 書籍表紙 -->
             <div class="hero-book-preview">
                 <div class="book-cover" style="padding: 0; overflow: hidden; display: block; width: 220px; height: 300px;">
@@ -149,30 +170,6 @@
                         <span class="event-label font-sans">頒布予定書籍:</span>
                         <span class="event-value">上記新刊解説書（紙＋電子版）</span>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ④ About (メイドさん解説、最後に配置) -->
-        <section class="about-section" id="about">
-            <div class="maid-avatar-area">
-                <div class="maid-stand-placeholder" style="border: none; background: none; height: auto;">
-                    <img src="./maid_mai.jpg" alt="マイ" style="width: 100%; max-height: 320px; border-radius: 0; box-shadow: 0 5px 15px rgba(0,0,0,0.15); object-fit: cover; display: block;">
-                </div>
-                <div class="maid-name font-mono">小国マイ - Mai Koguni</div>
-            </div>
-            <div class="about-dialog-box">
-                <div class="dialog-header font-mono">COGNITIVE_SYSTEM_EXPLANATION.txt</div>
-                <div class="dialog-text">
-                    <p>
-                        「ようこそ、<strong>CogniAIMZ（コグニエイムズ）</strong>へ！私は解説のマイだよ！」
-                    </p>
-                    <p>
-                        「モータースポーツにおいて、ブレーキングは単に車を減速させるだけじゃなくて、荷重移動をコントロールして車の向きを変える最も重要なフェーズんだ。でも、多くの初中級ドライバーは、自分がペダルをどれだけリリースしているか、脳内のイメージと実際の足裏の圧力（踏力）に大きな<span class="pink-highlight">『認知のズレ（Cognitive Gap）』</span>を抱えちゃっているんだよね。」
-                    </p>
-                    <p>
-                        「私たちのサークルでは、ミリ秒単位でロードセルペダルの挙動をキャプチャして、人間の感覚のフィードバックループを強化するツールと理論を研究しているよ。名前はシステム開発研究所のように堅苦しいけど、中身はレースゲームとメカが大好きなオタク魂でいっぱい！一緒に『狙った通りの1ミリ秒』を追求してみない？」
-                    </p>
                 </div>
             </div>
         </section>
